@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  /* 4% of height and width = 4vmin */
+  font-size: 4vmin;
+  color: darkgrey;
+  letter-spacing: 1vmin;
+}
+
+h1 {
+  color: grey;
+  font-size: 3vmin;
+  text-transform: capitalize;
+  margin-bottom: 50px;
+}
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 10vmin);
+  grid-template-rows: repeat(6, 10vmin);
+  gap: 1vmin;
+  margin-top: -4vmin;
+}
+
+#board > div {
+  border: 0.2vmin solid grey;
+}
