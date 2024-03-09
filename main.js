@@ -1,11 +1,48 @@
-// 1) Define required constants
+/*----- constants -----*/
+const PLAYERS = {
+  1: "x",
+  "-1": "O",
+  null: "teste",
+};
 
-// 2) Define required variables used to track the state of the game
+/*----- state variables -----*/
+let board;
+let turn;
+let winner;
 
-// 3) Store elements on the page that will be accessed in code more than once in variables to make code more concise, readable and performant.
+/*----- cached elements  -----*/
 
-// 4) Upon loading the app should:
-//   4.1) Initialize the state variables
+/*----- event listeners -----*/
+
+/*----- functions -----*/
+init();
+
+function init() {
+  gameBoard = [
+    [null, null, null],
+    [null, null, null],
+    [null, null, null],
+  ];
+
+  winner = null;
+  turn = 1;
+  render();
+}
+
+function render() {
+  renderGame();
+}
+
+function renderGame() {
+  gameBoard.forEach((colArr, colId) => {
+    colArr.forEach((cellVal, rowId) => {
+      const cellId = `c${colId}r${rowId}`;
+      const cellEl = document.getElementById(cellId);
+      cellEl.textContent = PLAYERS[cellVal];
+    });
+  });
+}
+
 //   4.2) Render those values to the page
 //   4.3) Wait for the user to click a square
 
