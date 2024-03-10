@@ -2,7 +2,7 @@
 const PLAYERS = {
   1: "x",
   "-1": "O",
-  null: "teste",
+  null: "",
 };
 
 /*----- state variables -----*/
@@ -11,10 +11,12 @@ let turn;
 let winner;
 
 /*----- cached elements  -----*/
+const message = document.querySelector("h1");
 
 /*----- event listeners -----*/
 
 /*----- functions -----*/
+
 init();
 
 function init() {
@@ -28,9 +30,9 @@ function init() {
   turn = 1;
   render();
 }
-
 function render() {
   renderGame();
+  renderMessage();
 }
 
 function renderGame() {
@@ -38,9 +40,26 @@ function renderGame() {
     colArr.forEach((cellVal, rowId) => {
       const cellId = `c${colId}r${rowId}`;
       const cellEl = document.getElementById(cellId);
-      cellEl.textContent = PLAYERS[cellVal];
+      cellEl.addEventListener("click", handleClick);
     });
   });
+}
+
+function handleClick(event) {
+  event.target.innerHTML = PLAYERS[turn];
+  turn *= -1;
+  renderMessage();
+  //   winner = checkWinner();
+}
+
+function renderMessage() {
+  if (winner === "T") {
+    message.innerText = "Tie Game!!";
+  } else if (winner) {
+    message.innerHTML = `<span style="color:${PLAYERS[winner]}"> ${PLAYERS[winner]}</span> Wins!`;
+  } else {
+    message.innerHTML = `<span style="color:${PLAYERS[turn]}">${PLAYERS[turn]}</span>'s Turn!`;
+  }
 }
 
 //   4.2) Render those values to the page
