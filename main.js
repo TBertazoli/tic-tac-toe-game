@@ -47,6 +47,7 @@ function renderGame() {
   });
 }
 function handleClick(event) {
+  if (winner) return;
   const col = event.target.colId;
   const row = event.target.rowId;
   event.target.innerHTML = PLAYERS[turn];
@@ -58,7 +59,7 @@ function handleClick(event) {
   }
   turn *= -1;
 
-  console.log(winner);
+  console.log(PLAYERS[turn]);
   renderMessage();
 }
 
@@ -82,6 +83,7 @@ function checkVertical() {
       gameBoard[0][colId] === gameBoard[1][colId] &&
       gameBoard[0][colId] === gameBoard[2][colId]
     ) {
+      console.log("vertical");
       return true;
     }
   }
