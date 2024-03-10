@@ -55,23 +55,34 @@ function renderGame() {
 function handleClick(event) {
   const col = event.target.colId;
   const row = event.target.rowId;
-  if (winner) {
-    return;
-  } else if (gameBoard[row][col] !== null) {
+  if (gameBoard[row][col] !== null || winner) {
     return;
   }
 
   event.target.innerHTML = PLAYERS[turn];
   gameBoard[row][col] = PLAYERS[turn];
 
-  const hasWinner = checkWinner();
-  if (hasWinner) {
+  const hasEnded = checkWinner() || checkTie();
+  if (hasEnded) {
     winner = turn;
+  } else {
+    turn *= -1;
   }
-  turn *= -1;
 
   console.log(PLAYERS[turn]);
   renderMessage();
+}
+
+function checkTie() {
+  for (let rowId = 0; rowId < gameBoard.length; rowId++) {
+    for (let colId = 0; colId < gameBoard[rowId].length; colId++) {
+      if (gameBoard[rowId][colId] === null) {
+        return false;
+      }
+    }
+  }
+  turn = "T";
+  return true;
 }
 
 function renderMessage() {
