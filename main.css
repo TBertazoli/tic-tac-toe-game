@@ -29,11 +29,25 @@ h1 {
 #board {
   display: grid;
   grid-template-columns: repeat(3, 10vmin);
-  grid-template-rows: repeat(6, 10vmin);
+  grid-template-rows: repeat(3, 10vmin);
   gap: 1vmin;
   margin-top: -4vmin;
 }
 
 #board > div {
   border: 0.2vmin solid grey;
+}
+
+button {
+  margin-top: 4vmin;
+  padding: 2vmin;
+  font-size: 2vmin;
+  border-radius: 4vmin;
+  border: 0.1vmin solid grey;
+  color: grey;
+}
+
+button:hover {
+  color: white;
+  background-color: darkgrey;
 }
