@@ -29,7 +29,7 @@ function init() {
   ];
 
   winner = null;
-  turn = 1;
+  turn = Math.floor(Math.random() * 2) === 0 ? 1 : -1;
   cells.forEach((cell) => {
     cell.innerHTML = "";
   });
