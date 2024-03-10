@@ -15,7 +15,7 @@ body {
 header {
   /* 4% of height and width = 4vmin */
   font-size: 4vmin;
-  color: darkgrey;
+  color: rebeccapurple;
   letter-spacing: 1vmin;
 }
 
@@ -30,7 +30,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(3, 10vmin);
   grid-template-rows: repeat(3, 10vmin);
-  gap: 1vmin;
+  /* gap: 1vmin; */
   margin-top: -4vmin;
 }
 
@@ -50,4 +50,11 @@ button {
 button:hover {
   color: white;
   background-color: darkgrey;
+}
+
+.signs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10vmin;
 }
