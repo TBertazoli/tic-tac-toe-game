@@ -12,6 +12,8 @@ let winner;
 
 /*----- cached elements  -----*/
 const message = document.querySelector("h1");
+const resetButton = document.getElementById("btn");
+const cells = document.querySelectorAll("#board > div");
 
 /*----- event listeners -----*/
 
@@ -28,11 +30,15 @@ function init() {
 
   winner = null;
   turn = 1;
+  cells.forEach((cell) => {
+    cell.innerHTML = "";
+  });
   render();
 }
 function render() {
   renderGame();
   renderMessage();
+  renderReset();
 }
 
 function renderGame() {
@@ -52,7 +58,7 @@ function handleClick(event) {
   const row = event.target.rowId;
   event.target.innerHTML = PLAYERS[turn];
   gameBoard[row][col] = PLAYERS[turn];
-  console.log(gameBoard);
+
   const hasWinner = checkWinner();
   if (hasWinner) {
     winner = turn;
@@ -114,4 +120,8 @@ function checkDiagonal() {
     console.log("diagonal");
     return true;
   }
+}
+
+function renderReset() {
+  resetButton.addEventListener("click", init);
 }
