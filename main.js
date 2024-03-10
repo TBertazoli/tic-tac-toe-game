@@ -53,9 +53,14 @@ function renderGame() {
   });
 }
 function handleClick(event) {
-  if (winner) return;
   const col = event.target.colId;
   const row = event.target.rowId;
+  if (winner) {
+    return;
+  } else if (gameBoard[row][col] !== null) {
+    return;
+  }
+
   event.target.innerHTML = PLAYERS[turn];
   gameBoard[row][col] = PLAYERS[turn];
 
