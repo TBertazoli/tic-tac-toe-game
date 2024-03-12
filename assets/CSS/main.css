@@ -10,8 +10,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url(http://www.transparenttextures.com/patterns/wood.png);`
-
+  background: url(http://www.transparenttextures.com/patterns/wood.png);
 }
 
 header {
@@ -52,9 +51,8 @@ button {
 }
 
 button:hover {
- 
   transform: scale(0.9);
-  transition: transform 150ms ease-in; 
+  transition: transform 150ms ease-in;
   border-top-color: darkgrey;
 }
 
