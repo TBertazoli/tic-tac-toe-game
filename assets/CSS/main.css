@@ -10,17 +10,19 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: url(http://www.transparenttextures.com/patterns/wood.png);`
+
 }
 
 header {
   /* 4% of height and width = 4vmin */
   font-size: 4vmin;
-  color: rebeccapurple;
+  color: black;
   letter-spacing: 1vmin;
 }
 
 h1 {
-  color: grey;
+  color: black;
   font-size: 3vmin;
   text-transform: capitalize;
   margin-bottom: 50px;
@@ -28,14 +30,16 @@ h1 {
 
 #board {
   display: grid;
-  grid-template-columns: repeat(3, 10vmin);
-  grid-template-rows: repeat(3, 10vmin);
+  grid-template-columns: repeat(3, 15vmin);
+  grid-template-rows: repeat(3, 15vmin);
   /* gap: 1vmin; */
   margin-top: -4vmin;
+  background-color: antiquewhite;
 }
 
 #board > div {
-  border: 0.2vmin solid grey;
+  /* border: 0.2vmin solid grey; */
+  border: 1vmin solid burlywood;
 }
 
 button {
@@ -48,8 +52,10 @@ button {
 }
 
 button:hover {
-  color: white;
-  background-color: darkgrey;
+ 
+  transform: scale(0.9);
+  transition: transform 150ms ease-in; 
+  border-top-color: darkgrey;
 }
 
 .signs {
