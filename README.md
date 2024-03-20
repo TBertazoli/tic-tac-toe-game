@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 
-   <img src="assets/images/Screenshot 2024-03-10 at 1.32.26 PM.png">
+   <img src="assets/images/Screenshot 2024-03-20 at 1.32.12 PM.png">
 
 ## Description
 
